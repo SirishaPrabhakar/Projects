@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            DICE GAME
+        </title>
+        <style>
+            body{
+                    background-color: lightblue;
+                    color: whitesmoke;
+                }
+            * {
+              box-sizing: border-box;
+            }
+            .column {
+              float: left;
+              width: 33.33%;
+              padding: 5px;
+            }
+            /* Clearfix (clear floats) */
+            .row::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+            </style>
+    </head>
+    <body>
+<h1 style="text-align: center;color: blue; font-size: 60px;font-family: 'Times New Roman', Times, serif;font-style: initial;"><u>Let's Play : </u></h1>
+<div class="row">
+<div class="column">
+<p style="color: blue;font-size: 25px">Player-One :</p>
+<img id="player1" src="diceimg 1.png" alt="dice" style="width:150px; height:150px;">
+</div>
+<div class="column">
+<p style="color: blue;font-size: 25px">Player-Two :</p>
+<img id="player2" src="diceimg 6.png" alt="dice" style="width:150px; height:150px;">
+</div>
+</div>
+<button style="color: blue;font-size: 25px;width: 9pc;text-align: center;" onclick="dice()">ROLL</button>
+
+<h2 id="result" style="color: white;"></h2>
+<script src="die.js"></script>
+
+</body>
+</html>

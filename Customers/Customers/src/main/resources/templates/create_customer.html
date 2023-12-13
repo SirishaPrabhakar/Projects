@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>CUSTOMERS DASHBOARD</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">CUSTOMERS</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/customer}">Dashboard >> Customers</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+     <div class="container">
+         <div class ="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                <h1 class="text-center">Create New Customer</h1>
+                 
+                 <div class="card-body">
+                     <form th:action="@{/customer}" th:object="${customer}" method="POST">
+                        <div class="form-group">
+                            <label> Customer </label>
+                            <input
+                            type="text"
+                            name="customer"
+                            th:field="*{customer}"
+                            class="form-control"
+                            placeholder="Select Via Customer Link"
+                            />
+                            
+                          </div>
+                          
+                          <div class="form-group">
+                            <label> Country</label>
+                            <input
+                            type="text"
+                            name="country"
+                            th:field="*{country}"
+                            class="form-control"
+                            placeholder="Select Country"
+                            />
+                          </div>
+                          
+                          <div class="form-group">
+                            <label> Region</label>
+                            <input
+                            type="text"
+                            name="region"
+                            th:field="*{region}"
+                            class="form-control"
+                            placeholder="Select Region"
+                            />
+                          </div>
+                          
+                          <div class="form-group">
+                            <label> Active</label>
+                            <input
+                            type="text"
+                            name="active"
+                            th:field="*{active}"
+                            class="form-control"
+                            placeholder="True/False"
+                            />
+                          </div>
+                          
+                          <div class="form-group">
+                            <label> Customer Type</label>
+                            <input
+                            type="text"
+                            name="customerType"
+                            th:field="*{customerType}"
+                            class="form-control"
+                            placeholder="Select Customer Type"
+                            />
+                          </div>
+                          
+                          <div class="form-group">
+                            <label> Business Unit</label>
+                            <input
+                            type="text"
+                            name="businessUnit"
+                            th:field="*{businessUnit}"
+                            class="form-control"
+                            placeholder="Select Business Unit"
+                            />
+                          </div>
+                          
+                          <div class="form-group">
+                            <label> Account Name</label>
+                            <input
+                            type="text"
+                            name="accountName"
+                            th:field="*{accountName}"
+                            class="form-control"
+                            placeholder="Select Account Name"
+                            />
+                          </div>
+                          
+                          
+                          <div class="box-footer">
+                             <button type="submit" class="btn btn-dark">
+                             Submit
+                             </button>
+                             
+                             </div>    
+                        </form>
+                     </div>
+                   </div>
+                 </div>
+              </div>
+</body>
+</html>

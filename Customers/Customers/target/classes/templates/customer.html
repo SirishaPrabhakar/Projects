@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>SALES ORDER</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">CUSTOMERS</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/customer}">Dashboard >> Customers</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+
+<div class="container">
+      <div class="row">
+	  <h1>List Customers</h1>
+	  </div>
+			
+      <div class="row">
+          <div class="col-lg-3">
+              <a th:href="@{/customer/new}" class="btn btn-primary btn-sm-mb-3"> Customers</a>
+          </div>
+      </div>
+      
+      <table class="table table-striped table-bordered">
+         <thead class= "table-dark">
+            <tr>
+                <th> Customer</th>
+                <th> Country</th>
+                <th> Region</th>
+                <th> Active</th>
+                <th> Customer Type</th>
+                <th> Business Unit</th>
+                <th> AccountName</th>
+                <th> Action </th>
+           </tr>
+        </thead>
+
+        <tbody>
+           <tr th:each="customers:${customer}">
+                <td th:text="${customers.customer}"></td>
+                <td th:text="${customers.country}"></td>
+                <td th:text="${customers.region}"></td>
+                <td th:text="${customers.active}"></td>
+                <td th:text="${customers.customerType}"></td>
+                <td th:text="${customers.businessUnit}"></td>
+                <td th:text="${customers.accountName}"></td>                
+                <td>
+                
+                   <a th:href="@{/customer/edit/{id}(id=${customers.id})}"
+				   class="btn btn-primary">Update</a>
+                   <a th:href="@{/customer/{id}(id=${customers.id})}"
+                   class="btn btn-danger">Delete</a>
+                </td>
+           </tr>
+        </tbody>
+     </table>
+   </div>
+
+</body>
+</html>
